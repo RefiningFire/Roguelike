@@ -1,0 +1,15 @@
+
+
+
+<MainScreen>:
+    FloatLayout:
+        BoxLayout:
+            size_hint: None, None
+            size: 200, 100
+            pos: self.parent.width/2-100,self.parent.height - 250
+            Button:
+                text: 'Draw'
+                on_press:
+                    root.recalculate_stats()
+                    root.draw_card()
+                    root.load_buttons()
