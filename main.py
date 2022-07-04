@@ -57,7 +57,7 @@ class MainScreen(Screen):
         for x in range(width_in_squares):
             for y in range(height_in_squares):
                 self.__cur_square_image = Image(
-                    source=f'{floor_atlas}dark-cobblestone-sw',
+                    source=f'{floor_atlas}gray_tile_se',
                     keep_ratio=False,
                     allow_stretch=True,
                     size_hint=(None,None),
