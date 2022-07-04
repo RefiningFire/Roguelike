@@ -11,6 +11,8 @@ from kivy.uix.image import Image
 from kivy.core.window import Window
 Window.fullscreen = 'auto'
 
+import random
+
 atlas = Atlas('graphics/DawnLike/Objects/floor.atlas')
 floor_atlas = 'atlas://graphics/DawnLike/Objects/Floor/'
 
@@ -76,6 +78,12 @@ class Roguelike(App):
         app.scale = 64
 
         return app.sm
+
+def d(sides,times=1):
+    __result = 0
+    for roll in range(times):
+        result += random.randint(1,sides)
+    return __result
 
 
 if __name__ == '__main__':
