@@ -1,0 +1,13 @@
+{
+  "Floor.png": {
+        "dark-cobblestone-sw": [0, 0, 16, 16],
+        "dark-cobblestone-w": [0, 16, 16, 16],
+        "dark-cobblestone-nw": [0, 32, 16, 16],
+        "dark-cobblestone-s": [16, 0, 16, 16],
+        "dark-cobblestone-c": [16, 16, 16, 16],
+        "dark-cobblestone-n": [16, 32, 16, 16],
+        "dark-cobblestone-se": [32, 0, 16, 16],
+        "dark-cobblestone-e": [32, 16, 16, 16],
+        "dark-cobblestone-ne": [32, 16, 16, 16]
+  }
+}
