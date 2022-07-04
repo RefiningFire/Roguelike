@@ -12,19 +12,21 @@ from kivy.core.window import Window
 Window.fullscreen = 'auto'
 
 atlas = Atlas('graphics/DawnLike/Objects/floor.atlas')
-print(atlas.textures.keys())
-print()
-print(atlas['dark-cobblestone-sw'])
+floor_atlas = 'atlas://graphics/DawnLike/Objects/Floor/'
+
+atlas = Atlas('graphics/DawnLike/Characters/player0.atlas')
+char_0_atlas = 'atlas://graphics/DawnLike/Characters/Player0/'
+
 
 
 
 
 class MainScreen(Screen):
-    def draw_map(self):
+    def draw_map(self,width_in_squares,height_in_squares):
         self.map = RelativeLayout(
-                    pos=(500,500),
+                    pos=(0,0),
                     size_hint=(None,None),
-                    size=(300,300))
+                    size=(app.scale*width_in_squares,app.scale*height_in_squares))
 
         with self.map.canvas.before:
             Color(.4,.4,0,.5)
@@ -32,22 +34,46 @@ class MainScreen(Screen):
                             size=self.map.size)
 
 
-        self.image = Image(
-            source='atlas://graphics/DawnLike/Objects/Floor/dark-cobblestone-sw',
-            pos=(-142,-142))
-
-        self.map.add_widget(self.image)
+        self.draw_room(3,3)
 
         app.sm.get_screen('main').add_widget(self.map)
 
+        self.__char_image = Image(
+            source=f'{char_0_atlas}generic',
+            keep_ratio=False,
+            allow_stretch=True,
+            size_hint=(None,None),
+            size=(app.scale,app.scale),
+            pos=(self.width/2-(app.scale/2),self.height/2))
+
+
+        app.sm.get_screen('main').add_widget(self.__char_image)
+
     def move_map(self,x,y):
         self.map.pos=(self.map.x + x,self.map.y + y)
+
+
+    def draw_room(self,width_in_squares,height_in_squares):
+        for x in range(width_in_squares):
+            for y in range(height_in_squares):
+                self.__cur_square_image = Image(
+                    source=f'{floor_atlas}dark-cobblestone-sw',
+                    keep_ratio=False,
+                    allow_stretch=True,
+                    size_hint=(None,None),
+                    size=(app.scale,app.scale),
+                    pos=(app.scale*x,app.scale*y))
+
+                self.map.add_widget(self.__cur_square_image)
 
 class Roguelike(App):
     def build(self):
         app.sm = ScreenManager(transition=SlideTransition())
 
         app.sm.add_widget(MainScreen(name='main'))
+
+        # This represents the size of a square in pixels. Art is 16x16, scaling up will zoom in.
+        app.scale = 64
 
         return app.sm
 

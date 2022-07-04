@@ -5,36 +5,36 @@
     FloatLayout:
         Button:
             size_hint: None, None
-            size: 200, 100
-            pos: 1000,1000
-            text: 'Draw Map'
-            on_press:
-                root.draw_map()
-        Button:
-            size_hint: None, None
             size: 100, 100
-            pos: 1300,1000
-            text: '>'
-            on_press:
-                root.move_map(16,0)
-        Button:
-            size_hint: None, None
-            size: 100, 100
-            pos: 800,1000
+            pos: 25,150
             text: '<'
             on_press:
-                root.move_map(-16,0)
+                root.move_map(app.scale,0)
         Button:
             size_hint: None, None
             size: 100, 100
-            pos: 1100,1200
+            pos: 150,150
+            text: 'Map'
+            on_press:
+                root.draw_map(32,32)
+        Button:
+            size_hint: None, None
+            size: 100, 100
+            pos: 275,150
+            text: '>'
+            on_press:
+                root.move_map(-app.scale,0)
+        Button:
+            size_hint: None, None
+            size: 100, 100
+            pos: 150,275
             text: '^'
             on_press:
-                root.move_map(0,16)
+                root.move_map(0,-app.scale)
         Button:
             size_hint: None, None
             size: 100, 100
-            pos: 1100,800
+            pos: 150,25
             text: 'v'
             on_press:
-                root.move_map(0,-16)
+                root.move_map(0,app.scale)
