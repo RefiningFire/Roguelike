@@ -6,7 +6,35 @@
         Button:
             size_hint: None, None
             size: 200, 100
-            pos: 200,200
-            text: 'Draw'
+            pos: 1000,1000
+            text: 'Draw Map'
             on_press:
                 root.draw_map()
+        Button:
+            size_hint: None, None
+            size: 100, 100
+            pos: 1300,1000
+            text: '>'
+            on_press:
+                root.move_map(16,0)
+        Button:
+            size_hint: None, None
+            size: 100, 100
+            pos: 800,1000
+            text: '<'
+            on_press:
+                root.move_map(-16,0)
+        Button:
+            size_hint: None, None
+            size: 100, 100
+            pos: 1100,1200
+            text: '^'
+            on_press:
+                root.move_map(0,16)
+        Button:
+            size_hint: None, None
+            size: 100, 100
+            pos: 1100,800
+            text: 'v'
+            on_press:
+                root.move_map(0,-16)

@@ -21,24 +21,27 @@ print(atlas['dark-cobblestone-sw'])
 
 class MainScreen(Screen):
     def draw_map(self):
-        self.layout = RelativeLayout(
+        self.map = RelativeLayout(
                     pos=(500,500),
                     size_hint=(None,None),
                     size=(300,300))
 
-        with self.layout.canvas.before:
+        with self.map.canvas.before:
             Color(.4,.4,0,.5)
-            self.layout.rect = Rectangle(
-                            size=self.layout.size)
+            self.map.rect = Rectangle(
+                            size=self.map.size)
 
 
         self.image = Image(
             source='atlas://graphics/DawnLike/Objects/Floor/dark-cobblestone-sw',
             pos=(-142,-142))
 
-        self.layout.add_widget(self.image)
+        self.map.add_widget(self.image)
 
-        app.sm.get_screen('main').add_widget(self.layout)
+        app.sm.get_screen('main').add_widget(self.map)
+
+    def move_map(self,x,y):
+        self.map.pos=(self.map.x + x,self.map.y + y)
 
 class Roguelike(App):
     def build(self):
@@ -51,4 +54,5 @@ class Roguelike(App):
 
 if __name__ == '__main__':
     app = Roguelike()
+
     app.run()
