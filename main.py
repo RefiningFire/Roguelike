@@ -59,7 +59,7 @@ class MainScreen(Screen):
         for x in range(width_in_squares):
             for y in range(height_in_squares):
                 self.__cur_square_image = Image(
-                    source=f'{floor_atlas}gray_tile_se',
+                    source=f'{floor_atlas}ltblu_bckgrnd',
                     keep_ratio=False,
                     allow_stretch=True,
                     size_hint=(None,None),
@@ -82,7 +82,7 @@ class Roguelike(App):
 def d(sides,times=1):
     __result = 0
     for roll in range(times):
-        result += random.randint(1,sides)
+        __result += random.randint(1,sides)
     return __result
 
 
