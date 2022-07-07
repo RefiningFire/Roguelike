@@ -35,6 +35,11 @@ door0_atlas = 'atlas://graphics/DawnLike/Objects/Door0/'
 atlas = Atlas('graphics/DawnLike/Objects/door1.atlas')
 door1_atlas = 'atlas://graphics/DawnLike/Objects/Door1/'
 
+atlas = Atlas('graphics/DawnLike/Objects/effect0.atlas')
+effect0_atlas = 'atlas://graphics/DawnLike/Objects/Effect0/'
+atlas = Atlas('graphics/DawnLike/Objects/effect1.atlas')
+effect1_atlas = 'atlas://graphics/DawnLike/Objects/Effect1/'
+
 atlas = Atlas('graphics/DawnLike/Characters/player0.atlas')
 char_0_atlas = 'atlas://graphics/DawnLike/Characters/Player0/'
 
@@ -78,7 +83,7 @@ class MainScreen(Screen):
         for x in range(width_in_squares):
             for y in range(height_in_squares):
                 self.__cur_square_image = Image(
-                    source=f'{door0_atlas}row_06_col_08',
+                    source=f'{effect1_atlas}row_18_col_04',
                     keep_ratio=False,
                     allow_stretch=True,
                     size_hint=(None,None),
