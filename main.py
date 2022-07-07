@@ -65,6 +65,11 @@ pit0_atlas = 'atlas://graphics/DawnLike/Objects/Pit0/'
 atlas = Atlas('graphics/DawnLike/Objects/pit1.atlas')
 pit1_atlas = 'atlas://graphics/DawnLike/Objects/Pit1/'
 
+atlas = Atlas('graphics/DawnLike/Objects/trap0.atlas')
+trap0_atlas = 'atlas://graphics/DawnLike/Objects/Trap0/'
+atlas = Atlas('graphics/DawnLike/Objects/trap1.atlas')
+trap1_atlas = 'atlas://graphics/DawnLike/Objects/Trap1/'
+
 
 
 atlas = Atlas('graphics/DawnLike/Characters/player0.atlas')
@@ -110,7 +115,7 @@ class MainScreen(Screen):
         for x in range(width_in_squares):
             for y in range(height_in_squares):
                 self.__cur_square_image = Image(
-                    source=f'{pit1_atlas}row_30_col_08',
+                    source=f'{trap1_atlas}row_01_col_01',
                     keep_ratio=False,
                     allow_stretch=True,
                     size_hint=(None,None),
