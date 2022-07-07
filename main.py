@@ -22,6 +22,19 @@ wall_atlas = 'atlas://graphics/DawnLike/Objects/Wall/'
 atlas = Atlas('graphics/DawnLike/Objects/fence.atlas')
 fence_atlas = 'atlas://graphics/DawnLike/Objects/Fence/'
 
+atlas = Atlas('graphics/DawnLike/Objects/tile.atlas')
+tile_atlas = 'atlas://graphics/DawnLike/Objects/Tile/'
+
+atlas = Atlas('graphics/DawnLike/Objects/decor0.atlas')
+decor0_atlas = 'atlas://graphics/DawnLike/Objects/Decor0/'
+atlas = Atlas('graphics/DawnLike/Objects/decor1.atlas')
+decor1_atlas = 'atlas://graphics/DawnLike/Objects/Decor1/'
+
+atlas = Atlas('graphics/DawnLike/Objects/door0.atlas')
+door0_atlas = 'atlas://graphics/DawnLike/Objects/Door0/'
+atlas = Atlas('graphics/DawnLike/Objects/door1.atlas')
+door1_atlas = 'atlas://graphics/DawnLike/Objects/Door1/'
+
 atlas = Atlas('graphics/DawnLike/Characters/player0.atlas')
 char_0_atlas = 'atlas://graphics/DawnLike/Characters/Player0/'
 
@@ -65,7 +78,7 @@ class MainScreen(Screen):
         for x in range(width_in_squares):
             for y in range(height_in_squares):
                 self.__cur_square_image = Image(
-                    source=f'{fence_atlas}row_03_col_02',
+                    source=f'{door0_atlas}row_06_col_08',
                     keep_ratio=False,
                     allow_stretch=True,
                     size_hint=(None,None),
