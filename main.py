@@ -50,6 +50,11 @@ hill0_atlas = 'atlas://graphics/DawnLike/Objects/Hill0/'
 atlas = Atlas('graphics/DawnLike/Objects/hill1.atlas')
 hill1_atlas = 'atlas://graphics/DawnLike/Objects/Hill1/'
 
+atlas = Atlas('graphics/DawnLike/Objects/map0.atlas')
+map0_atlas = 'atlas://graphics/DawnLike/Objects/Map0/'
+atlas = Atlas('graphics/DawnLike/Objects/map1.atlas')
+map1_atlas = 'atlas://graphics/DawnLike/Objects/Map1/'
+
 atlas = Atlas('graphics/DawnLike/Characters/player0.atlas')
 char_0_atlas = 'atlas://graphics/DawnLike/Characters/Player0/'
 
@@ -93,7 +98,7 @@ class MainScreen(Screen):
         for x in range(width_in_squares):
             for y in range(height_in_squares):
                 self.__cur_square_image = Image(
-                    source=f'{hill0_atlas}row_17_col_16',
+                    source=f'{map1_atlas}row_14_col_12',
                     keep_ratio=False,
                     allow_stretch=True,
                     size_hint=(None,None),
