@@ -16,6 +16,12 @@ import random
 atlas = Atlas('graphics/DawnLike/Objects/floor.atlas')
 floor_atlas = 'atlas://graphics/DawnLike/Objects/Floor/'
 
+atlas = Atlas('graphics/DawnLike/Objects/wall.atlas')
+wall_atlas = 'atlas://graphics/DawnLike/Objects/Wall/'
+
+atlas = Atlas('graphics/DawnLike/Objects/fence.atlas')
+fence_atlas = 'atlas://graphics/DawnLike/Objects/Fence/'
+
 atlas = Atlas('graphics/DawnLike/Characters/player0.atlas')
 char_0_atlas = 'atlas://graphics/DawnLike/Characters/Player0/'
 
@@ -59,7 +65,7 @@ class MainScreen(Screen):
         for x in range(width_in_squares):
             for y in range(height_in_squares):
                 self.__cur_square_image = Image(
-                    source=f'{floor_atlas}ltblu_bckgrnd',
+                    source=f'{fence_atlas}row_03_col_02',
                     keep_ratio=False,
                     allow_stretch=True,
                     size_hint=(None,None),
